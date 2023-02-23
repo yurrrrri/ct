@@ -1,10 +1,9 @@
 package com.ll.p120829;
 
-import com.ll.p120829.Main;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class MainTest {
     @Test

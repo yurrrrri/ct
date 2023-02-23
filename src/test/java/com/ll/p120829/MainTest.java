@@ -30,4 +30,10 @@ public class MainTest {
     void t4(){
         assertThat(new Main().solution(90)).isEqualTo(2);
     }
+
+    @Test
+    @DisplayName("50 => 1")
+    void t5(){
+        assertThat(new Main().solution(50)).isEqualTo(1);
+    }
 }

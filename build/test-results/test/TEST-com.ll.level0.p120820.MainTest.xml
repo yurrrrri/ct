@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ll.level0.p120820.MainTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-03-10T00:26:47" hostname="DESKTOP-272TI8S" time="0.061">
+  <properties/>
+  <testcase name="40 =&gt; 1983" classname="com.ll.level0.p120820.MainTest" time="0.061"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

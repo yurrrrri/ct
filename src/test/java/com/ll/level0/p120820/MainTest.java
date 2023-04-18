@@ -8,13 +8,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class MainTest {
     @Test
     @DisplayName("40 => 1983")
-    void t1(){
+    void t1() {
         assertThat(new Solution().solution(40)).isEqualTo(1983);
     }
 
     @Test
     @DisplayName("23 => 2000")
-    void t2(){
+    void t2() {
         assertThat(new Solution().solution(23)).isEqualTo(2000);
     }
 }

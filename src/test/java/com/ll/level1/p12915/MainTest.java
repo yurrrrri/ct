@@ -8,7 +8,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class MainTest {
     @Test
     @DisplayName("car, bed, sun")
-    void t1(){
+    void t1() {
         String[] strings = {"sun", "bed", "car"};
         String[] result = {"car", "bed", "sun"};
         assertThat(new Solution().solution(strings, 1)).isEqualTo(result);
@@ -16,7 +16,7 @@ public class MainTest {
 
     @Test
     @DisplayName("abcd, abce, cdx")
-    void t2(){
+    void t2() {
         String[] strings = {"abce", "abcd", "cdx"};
         String[] result = {"abcd", "abce", "cdx"};
         assertThat(new Solution().solution(strings, 2)).isEqualTo(result);

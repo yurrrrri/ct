@@ -8,21 +8,21 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class MainTest {
     @Test
     @DisplayName("[1, 2, 3]")
-    void t1(){
+    void t1() {
         int[] sides = {1, 2, 3};
         assertThat(new Solution().solution(sides)).isEqualTo(2);
     }
 
     @Test
     @DisplayName("[3, 6, 2]")
-    void t2(){
+    void t2() {
         int[] sides = {3, 6, 2};
         assertThat(new Solution().solution(sides)).isEqualTo(2);
     }
 
     @Test
     @DisplayName("[199, 72, 222]")
-    void t3(){
+    void t3() {
         int[] sides = {199, 72, 222};
         assertThat(new Solution().solution(sides)).isEqualTo(1);
     }

@@ -8,13 +8,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class MainTest {
     @Test
     @DisplayName("3, 2 => 1")
-    void t1(){
+    void t1() {
         assertThat(new Solution().solution(3, 2)).isEqualTo(1);
     }
 
     @Test
     @DisplayName("10, 5 => 0")
-    void t2(){
+    void t2() {
         assertThat(new Solution().solution(10, 5)).isEqualTo(0);
     }
 }

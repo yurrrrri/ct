@@ -6,13 +6,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class MainTest {
     @Test
-    void t1(){
+    void t1() {
         int[] result = {1, 0};
         assertThat(new Solution().solution(5500)).isEqualTo(result);
     }
 
     @Test
-    void t2(){
+    void t2() {
         int[] result = {2, 4000};
         assertThat(new Solution().solution(15000)).isEqualTo(result);
     }

@@ -6,12 +6,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class MainTest {
     @Test
-    void t1(){
+    void t1() {
         assertThat(new Solution().solution("happy birthday!")).isEqualTo(30);
     }
 
     @Test
-    void t2(){
+    void t2() {
         assertThat(new Solution().solution("I love you~")).isEqualTo(22);
     }
 }

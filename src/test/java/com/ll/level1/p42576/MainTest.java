@@ -8,7 +8,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class MainTest {
     @Test
     @DisplayName("leo")
-    void t1(){
+    void t1() {
         String[] participant = {"leo", "kiki", "eden"};
         String[] completion = {"eden", "kiki"};
         assertThat(new Solution().solution(participant, completion)).isEqualTo("leo");
@@ -16,7 +16,7 @@ public class MainTest {
 
     @Test
     @DisplayName("vinko")
-    void t2(){
+    void t2() {
         String[] participant = {"marina", "josipa", "nikola", "vinko", "filipa"};
         String[] completion = {"josipa", "filipa", "marina", "nikola"};
         assertThat(new Solution().solution(participant, completion)).isEqualTo("vinko");
@@ -24,7 +24,7 @@ public class MainTest {
 
     @Test
     @DisplayName("mislav")
-    void t3(){
+    void t3() {
         String[] participant = {"mislav", "stanko", "mislav", "ana"};
         String[] completion = {"stanko", "ana", "mislav"};
         assertThat(new Solution().solution(participant, completion)).isEqualTo("mislav");

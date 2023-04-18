@@ -13,7 +13,7 @@ class Solution {
         Map<String, Integer> map = new HashMap<>();
         String[] arr = s.split("");
 
-        for(int i=0; i<arr.length; i++){
+        for (int i = 0; i < arr.length; i++) {
             answer[i] = i - map.getOrDefault(arr[i], i + 1);
             map.put(arr[i], i);
         }

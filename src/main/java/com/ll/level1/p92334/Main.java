@@ -8,7 +8,7 @@ public class Main {
 class Solution {
     public int[] solution(String[] id_list, String[] report, int k) {
         Set<String> set = new HashSet<>();
-        for(String names : report){
+        for (String names : report) {
             set.add(names);
         }
 
@@ -18,24 +18,24 @@ class Solution {
         int index = 0;
 
         Iterator iter = set.iterator();
-        while(iter.hasNext()){
+        while (iter.hasNext()) {
             String[] names = iter.next().toString().split(" ");
             reporter[index] = names[0];
             reportee[index] = names[1];
-            map.put(names[1], map.getOrDefault(names[1], 0)+1);
+            map.put(names[1], map.getOrDefault(names[1], 0) + 1);
             index++;
         }
 
         Map<String, Integer> result = new LinkedHashMap<>();
-        for(String name : id_list){
+        for (String name : id_list) {
             result.put(name, 0);
         }
 
-        for(String name : map.keySet()){
-            if(map.get(name) >= k){
-                for(int i=0; i< reporter.length; i++){
-                    if(reportee[i].equals(name)){
-                        result.put(reporter[i], result.getOrDefault(reporter[i], 0)+1);
+        for (String name : map.keySet()) {
+            if (map.get(name) >= k) {
+                for (int i = 0; i < reporter.length; i++) {
+                    if (reportee[i].equals(name)) {
+                        result.put(reporter[i], result.getOrDefault(reporter[i], 0) + 1);
                     }
                 }
             }
@@ -43,7 +43,7 @@ class Solution {
 
         int[] answer = new int[id_list.length];
         int idx = 0;
-        for(int count : result.values()){
+        for (int count : result.values()) {
             answer[idx++] = count;
         }
 

@@ -8,19 +8,19 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class MainTest {
     @Test
     @DisplayName("23 => 5")
-    void t1(){
+    void t1() {
         assertThat(new Solution().solution(23)).isEqualTo(5);
     }
 
     @Test
     @DisplayName("24 => 6")
-    void t2(){
+    void t2() {
         assertThat(new Solution().solution(24)).isEqualTo(6);
     }
 
     @Test
     @DisplayName("999 => 201")
-    void t3(){
+    void t3() {
         assertThat(new Solution().solution(999)).isEqualTo(201);
     }
 }

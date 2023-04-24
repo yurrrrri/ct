@@ -9,4 +9,19 @@ public class SolutionTest {
     void t001() {
         assertThat(new Solution().solution("BAA")).isEqualTo(1);
     }
+
+    @Test
+    void t002() {
+        assertThat(new Solution().solution("CAA")).isEqualTo(2);
+    }
+
+    @Test
+    void t003() {
+        assertThat(new Solution().solution("BBA")).isEqualTo(3);
+    }
+
+    @Test
+    void t004() {
+        assertThat(new Solution().solution("ZBA")).isEqualTo(3);
+    }
 }

@@ -24,4 +24,14 @@ public class SolutionTest {
     void t004() {
         assertThat(new Solution().solution("ZBA")).isEqualTo(3);
     }
+
+    @Test
+    void t005() {
+        assertThat(new Solution().moveCostBy1("KAABC")).isEqualTo(4);
+    }
+
+    @Test
+    void t006() {
+        assertThat(new Solution().moveCostBy2("KAABC")).isEqualTo(2);
+    }
 }

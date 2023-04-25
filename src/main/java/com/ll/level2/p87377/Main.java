@@ -1,9 +1,10 @@
 package com.ll.level2.p87377;
 
+import com.ll.Ut;
+
 import java.util.*;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Main {
@@ -44,7 +45,7 @@ class Solution {
         return Point.of(x, y);
     }
 
-    Points intersections(int[][] line) {
+    private Points intersections(int[][] line) {
         Points points = Points.of();
 
         for (int i = 0; i < line.length; i++) {
@@ -60,7 +61,7 @@ class Solution {
         return points;
     }
 
-    String[] drawOnCoordinate(char[][] matrix) {
+    private String[] drawOnCoordinate(char[][] matrix) {
         return Ut.revRange(0, matrix.length)
                 .boxed()
                 .map(i -> matrix[i])
@@ -134,7 +135,7 @@ class Points implements Iterable<Point> {
         return data;
     }
 
-    Point getMinPoint() {
+    private Point getMinPoint() {
         long x = Long.MAX_VALUE;
         long y = Long.MAX_VALUE;
 
@@ -146,7 +147,7 @@ class Points implements Iterable<Point> {
         return Point.of(x, y);
     }
 
-    Point getMaxPoint() {
+    private Point getMaxPoint() {
         long x = Long.MIN_VALUE;
         long y = Long.MIN_VALUE;
 
@@ -158,7 +159,7 @@ class Points implements Iterable<Point> {
         return Point.of(x, y);
     }
 
-    Points positivePoints() {
+    private Points positivePoints() {
         Point minPoint = getMinPoint();
 
         return Points.of(data.stream()
@@ -166,7 +167,7 @@ class Points implements Iterable<Point> {
                 .toArray(Point[]::new));
     }
 
-    char[][] emptyMatrix() {
+    private char[][] emptyMatrix() {
         Point minPoint = getMinPoint();
         Point maxPoint = getMaxPoint();
 
@@ -179,7 +180,7 @@ class Points implements Iterable<Point> {
         return matrix;
     }
 
-    char[][] toMatrix() {
+    public char[][] toMatrix() {
         char[][] matrix = emptyMatrix();
         Points points = positivePoints();
 
@@ -213,11 +214,5 @@ class Points implements Iterable<Point> {
 
     public Stream<Point> stream() {
         return data.stream();
-    }
-}
-
-class Ut {
-    public static IntStream revRange(int from, int to) {
-        return IntStream.range(from, to).map(i -> to - i + from - 1);
     }
 }

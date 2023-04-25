@@ -17,28 +17,28 @@ public class SolutionTest {
     @Test
     void intersections() {
         int[][] line = {{1, -1, 0}, {2, -1, 0}, {4, -1, 0}};
-        assertThat(new Solution().intersections(line)).isEqualTo(Points.of(Point.of(0, 0)));
+        assertThat((Points) TestUt.callArr(new Solution(), "intersections", line)).isEqualTo(Points.of(Point.of(0, 0)));
     }
 
     @Test
     void getMinPoint() {
-        assertThat(Points.of(Point.of(1, -1), Point.of(-1, 1)).getMinPoint()).isEqualTo(Point.of(-1, -1));
+        assertThat((Point) TestUt.call(Points.of(Point.of(1, -1), Point.of(-1, 1)), "getMinPoint")).isEqualTo(Point.of(-1, -1));
     }
 
     @Test
     void getMaxPoint() {
-        assertThat(Points.of(Point.of(4, -1), Point.of(-1, 6)).getMaxPoint()).isEqualTo(Point.of(4, 6));
+        assertThat((Point) TestUt.call(Points.of(Point.of(4, -1), Point.of(-1, 6)), "getMaxPoint")).isEqualTo(Point.of(4, 6));
     }
 
     @Test
     void emptyMatrix() {
-        assertThat(Points.of(Point.of(1, 1), Point.of(-1, 1)).emptyMatrix())
+        assertThat((char[][]) TestUt.call(Points.of(Point.of(1, 1), Point.of(-1, 1)), "emptyMatrix"))
                 .isEqualTo(new char[][]{{'.', '.', '.'}});
     }
 
     @Test
     void positivePoints() {
-        assertThat(Points.of(Point.of(4, -7), Point.of(-1, 6)).positivePoints()).isEqualTo(Points.of(Point.of(5, 0), Point.of(0, 13)));
+        assertThat((Points) TestUt.call(Points.of(Point.of(4, -7), Point.of(-1, 6)), "positivePoints")).isEqualTo(Points.of(Point.of(5, 0), Point.of(0, 13)));
     }
 
     @Test
@@ -49,7 +49,7 @@ public class SolutionTest {
 
     @Test
     void drawOnCoordinate() {
-        assertThat(new Solution().drawOnCoordinate(new char[][]{{'*', '.'}, {'.', '*'}}))
+        assertThat((String[]) TestUt.callArr(new Solution(), "drawOnCoordinate", new char[][]{{'*', '.'}, {'.', '*'}}))
                 .isEqualTo(new String[]{".*", "*."});
     }
 

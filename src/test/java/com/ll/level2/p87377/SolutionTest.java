@@ -18,7 +18,7 @@ public class SolutionTest {
     @Test
     void intersections() {
         int[][] line = {{1, -1, 0}, {2, -1, 0}, {4, -1, 0}};
-        assertThat(new Solution().intersections(line)).isEqualTo(Set.of(Point.of(0, 0)));
+        assertThat(new Solution().intersections(line)).isEqualTo(Points.of(Point.of(0, 0)));
     }
 
     @Test

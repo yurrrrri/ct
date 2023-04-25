@@ -2,6 +2,7 @@ package com.ll.level2.p87377;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -11,7 +12,7 @@ public class Main {
 
 class Solution {
     public String[] solution(int[][] line) {
-        Set<Point> points = intersections(line);
+        Set<Point> points = intersections(line).toSet();
         char[][] matrix = transformToMatrix(points);
         return drawOnCoordinate(matrix);
     }
@@ -44,8 +45,8 @@ class Solution {
         return Point.of(x, y);
     }
 
-    public Set<Point> intersections(int[][] line) {
-        Set<Point> points = new HashSet<>();
+    public Points intersections(int[][] line) {
+        Points points = Points.of();
 
         for (int i = 0; i < line.length; i++) {
             for (int j = i + 1; j < line.length; j++) {
@@ -166,6 +167,39 @@ class Point {
                 "x=" + x +
                 ", y=" + y +
                 '}';
+    }
+}
+
+class Points {
+    private final Set<Point> data;
+
+    private Points(Set<Point> data) {
+        this.data = data;
+    }
+
+    public static Points of(Point... pointArray) {
+        return new Points(Arrays.stream(pointArray).collect(Collectors.toCollection(HashSet::new)));
+    }
+
+    public boolean add(Point point) {
+        return data.add(point);
+    }
+
+    public Set<Point> toSet() {
+        return data;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Points points)) return false;
+
+        return Objects.equals(data, points.data);
+    }
+
+    @Override
+    public int hashCode() {
+        return data != null ? data.hashCode() : 0;
     }
 }
 

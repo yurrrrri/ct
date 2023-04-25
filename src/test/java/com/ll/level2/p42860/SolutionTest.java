@@ -46,4 +46,29 @@ public class SolutionTest {
         assertThat(Ut.getLongestIndexAndLength("KAAAABAAAATK", 'A')).isEqualTo(
                 new Ut.LongestIndexAndLength(1, 4));
     }
+
+    @Test
+    void t009() {
+        assertThat(new Solution().moveCostBy3("ABCDAAAAKK")).isEqualTo(7);
+    }
+
+    @Test
+    void t010() {
+        assertThat(new Solution().moveCostBy4("ADAAAABCDKK")).isEqualTo(7);
+    }
+
+    @Test
+    void t011() {
+        assertThat(new Solution().moveCost("ADAAAABCDKK")).isEqualTo(7);
+    }
+
+    @Test
+    void t012() {
+        assertThat(new Solution().solution("JEROEN")).isEqualTo(56);
+    }
+
+    @Test
+    void t013() {
+        assertThat(new Solution().solution("JAN")).isEqualTo(23);
+    }
 }

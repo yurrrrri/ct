@@ -1,5 +1,6 @@
 package com.ll.level2.p42860;
 
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -22,16 +23,12 @@ class Solution {
         return nameCost;
     }
 
-    private int moveCost(String name) {
-        int moveCost = 0;
+    int moveCost(String name) {
+        if(name.length() == 1) return 0;
+        if(Ut.isAllOf(name.substring(1), 'A')) return 0;
 
-        for(int i=0; i<name.length(); i++) {
-            if((name.charAt(i) - 'A') > 0) {
-                moveCost = i;
-            }
-        }
-
-        return moveCost;
+        return List.of(moveCostBy1(name), moveCostBy2(name), moveCostBy3(name), moveCostBy4(name))
+                .stream().sorted().findFirst().orElse(0);
     }
 
     public int moveCostBy1(String name) {
@@ -53,9 +50,42 @@ class Solution {
 
         return move;
     }
+
+    public int moveCostBy3(String name) {
+        Ut.LongestIndexAndLength indexAndLength = Ut.getLongestIndexAndLength(name, 'A');
+
+        if(indexAndLength.index == -1) return moveCostBy1(name);
+
+        int backCharsCount = name.length() - (indexAndLength.index + indexAndLength.length);
+        int moveBack = backCharsCount * 2;
+
+        int frontCharsCount = indexAndLength.index - 1;
+        int moveFront = frontCharsCount;
+
+        return moveBack + moveFront;
+    }
+
+    public int moveCostBy4(String name) {
+        Ut.LongestIndexAndLength indexAndLength = Ut.getLongestIndexAndLength(name, 'A');
+
+        if(indexAndLength.index == -1) return moveCostBy1(name);
+
+        int frontCharsCount = indexAndLength.index - 1;
+        int moveFront = frontCharsCount * 2;
+
+        int backCharsCount = name.length() - (indexAndLength.index + indexAndLength.length);
+        int moveBack = backCharsCount;
+
+        return moveBack + moveFront;
+    }
 }
 
 class Ut {
+
+    public static boolean isAllOf(String str, char c) {
+        return str.chars().allMatch(e -> c == e);
+    }
+
     public static class LongestIndexAndLength {
         public int index;
         public int length;
@@ -68,7 +98,9 @@ class Ut {
         @Override
         public boolean equals(Object o) {
             if(this == o) return true;
-            if(!(o instanceof LongestIndexAndLength that)) return false;
+            if(!(o instanceof LongestIndexAndLength)) return false;
+
+            LongestIndexAndLength that = (LongestIndexAndLength) o;
 
             if(index != that.index) return false;
             return length == that.length;

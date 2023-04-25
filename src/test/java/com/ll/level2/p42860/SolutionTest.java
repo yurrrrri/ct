@@ -34,4 +34,16 @@ public class SolutionTest {
     void t006() {
         assertThat(new Solution().moveCostBy2("KAABC")).isEqualTo(2);
     }
+
+    @Test
+    void t007() {
+        assertThat(Ut.getLongestIndexAndLength("KBAAAATK", 'A')).isEqualTo(
+                new Ut.LongestIndexAndLength(2, 4));
+    }
+
+    @Test
+    void t008() {
+        assertThat(Ut.getLongestIndexAndLength("KAAAABAAAATK", 'A')).isEqualTo(
+                new Ut.LongestIndexAndLength(1, 4));
+    }
 }

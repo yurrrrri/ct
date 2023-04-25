@@ -1,5 +1,6 @@
 package com.ll.level2.p87377;
 
+import com.ll.TestUt;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -10,7 +11,7 @@ public class SolutionTest {
     void intersection() {
         int[] line1 = {1, -1, 0};
         int[] line2 = {2, -1, 0};
-        assertThat(new Solution().intersection(line1, line2)).isEqualTo(Point.of(0, 0));
+        assertThat((Point) TestUt.call(new Solution(), "intersection", line1, line2)).isEqualTo(Point.of(0, 0));
     }
 
     @Test

@@ -12,11 +12,11 @@ public class Main {
 class Solution {
     public String[] solution(int[][] line) {
         Points points = intersections(line);
-        char[][] matrix = transformToMatrix(points);
+        char[][] matrix = points.toMatrix();
         return drawOnCoordinate(matrix);
     }
 
-    public Point intersection(int[] line1, int[] line2) {
+    Point intersection(int[] line1, int[] line2) {
         double A = line1[0];
         double B = line1[1];
         double E = line1[2];
@@ -44,7 +44,7 @@ class Solution {
         return Point.of(x, y);
     }
 
-    public Points intersections(int[][] line) {
+    Points intersections(int[][] line) {
         Points points = Points.of();
 
         for (int i = 0; i < line.length; i++) {
@@ -60,61 +60,7 @@ class Solution {
         return points;
     }
 
-    public Point getMinPoint(Points points) {
-        long x = Long.MAX_VALUE;
-        long y = Long.MAX_VALUE;
-
-        for (Point point : points) {
-            x = Math.min(x, point.x);
-            y = Math.min(y, point.y);
-        }
-
-        return Point.of(x, y);
-    }
-
-    public Point getMaxPoint(Points points) {
-        long x = Long.MIN_VALUE;
-        long y = Long.MIN_VALUE;
-
-        for (Point point : points) {
-            x = Math.max(x, point.x);
-            y = Math.max(y, point.y);
-        }
-
-        return Point.of(x, y);
-    }
-
-    public char[][] emptyMatrix(Points points) {
-        Point minPoint = getMinPoint(points);
-        Point maxPoint = getMaxPoint(points);
-
-        int width = (int) (maxPoint.x - minPoint.x + 1);
-        int height = (int) (maxPoint.y - minPoint.y + 1);
-
-        char[][] matrix = new char[height][width];
-        Arrays.stream(matrix).forEach(row -> Arrays.fill(row, '.'));
-
-        return matrix;
-    }
-
-    public Points positivePoints(Points points) {
-        Point minPoint = getMinPoint(points);
-
-        return Points.of(points.stream()
-                        .map(p -> Point.of(p.x - minPoint.x, p.y - minPoint.y))
-                        .toArray(Point[]::new));
-    }
-
-    public char[][] transformToMatrix(Points points) {
-        char[][] matrix = emptyMatrix(points);
-        points = positivePoints(points);
-
-        points.forEach(p -> matrix[(int) p.y][(int) p.x] = '*');
-
-        return matrix;
-    }
-
-    public String[] drawOnCoordinate(char[][] matrix) {
+    String[] drawOnCoordinate(char[][] matrix) {
         return Ut.revRange(0, matrix.length)
                 .boxed()
                 .map(i -> matrix[i])
@@ -188,6 +134,60 @@ class Points implements Iterable<Point> {
         return data;
     }
 
+    Point getMinPoint() {
+        long x = Long.MAX_VALUE;
+        long y = Long.MAX_VALUE;
+
+        for (Point point : data) {
+            x = Math.min(x, point.x);
+            y = Math.min(y, point.y);
+        }
+
+        return Point.of(x, y);
+    }
+
+    Point getMaxPoint() {
+        long x = Long.MIN_VALUE;
+        long y = Long.MIN_VALUE;
+
+        for (Point point : data) {
+            x = Math.max(x, point.x);
+            y = Math.max(y, point.y);
+        }
+
+        return Point.of(x, y);
+    }
+
+    Points positivePoints() {
+        Point minPoint = getMinPoint();
+
+        return Points.of(data.stream()
+                .map(p -> Point.of(p.x - minPoint.x, p.y - minPoint.y))
+                .toArray(Point[]::new));
+    }
+
+    char[][] emptyMatrix() {
+        Point minPoint = getMinPoint();
+        Point maxPoint = getMaxPoint();
+
+        int width = (int) (maxPoint.x - minPoint.x + 1);
+        int height = (int) (maxPoint.y - minPoint.y + 1);
+
+        char[][] matrix = new char[height][width];
+        Arrays.stream(matrix).forEach(row -> Arrays.fill(row, '.'));
+
+        return matrix;
+    }
+
+    char[][] toMatrix() {
+        char[][] matrix = emptyMatrix();
+        Points points = positivePoints();
+
+        points.forEach(p -> matrix[(int) p.y][(int) p.x] = '*');
+
+        return matrix;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -217,7 +217,7 @@ class Points implements Iterable<Point> {
 }
 
 class Ut {
-    static IntStream revRange(int from, int to) {
+    public static IntStream revRange(int from, int to) {
         return IntStream.range(from, to).map(i -> to - i + from - 1);
     }
 }

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ll.level2.p87377.SolutionTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2023-04-25T07:36:22" hostname="DESKTOP-272TI8S" time="0.071">
+<testsuite name="com.ll.level2.p87377.SolutionTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2023-04-25T07:46:53" hostname="DESKTOP-272TI8S" time="0.067">
   <properties/>
-  <testcase name="positivePoints()" classname="com.ll.level2.p87377.SolutionTest" time="0.036"/>
-  <testcase name="getMaxPoint()" classname="com.ll.level2.p87377.SolutionTest" time="0.016"/>
+  <testcase name="positivePoints()" classname="com.ll.level2.p87377.SolutionTest" time="0.034"/>
+  <testcase name="getMaxPoint()" classname="com.ll.level2.p87377.SolutionTest" time="0.018"/>
   <testcase name="t1()" classname="com.ll.level2.p87377.SolutionTest" time="0.007"/>
-  <testcase name="t2()" classname="com.ll.level2.p87377.SolutionTest" time="0.0"/>
-  <testcase name="t3()" classname="com.ll.level2.p87377.SolutionTest" time="0.0"/>
+  <testcase name="t2()" classname="com.ll.level2.p87377.SolutionTest" time="0.001"/>
+  <testcase name="t3()" classname="com.ll.level2.p87377.SolutionTest" time="0.001"/>
   <testcase name="t4()" classname="com.ll.level2.p87377.SolutionTest" time="0.0"/>
-  <testcase name="intersection()" classname="com.ll.level2.p87377.SolutionTest" time="0.001"/>
+  <testcase name="intersection()" classname="com.ll.level2.p87377.SolutionTest" time="0.0"/>
   <testcase name="getMinPoint()" classname="com.ll.level2.p87377.SolutionTest" time="0.001"/>
   <testcase name="intersections()" classname="com.ll.level2.p87377.SolutionTest" time="0.0"/>
-  <testcase name="emptyMatrix()" classname="com.ll.level2.p87377.SolutionTest" time="0.0"/>
-  <testcase name="transformToMatrix()" classname="com.ll.level2.p87377.SolutionTest" time="0.0"/>
-  <testcase name="drawOnCoordinate()" classname="com.ll.level2.p87377.SolutionTest" time="0.001"/>
+  <testcase name="emptyMatrix()" classname="com.ll.level2.p87377.SolutionTest" time="0.001"/>
+  <testcase name="transformToMatrix()" classname="com.ll.level2.p87377.SolutionTest" time="0.001"/>
+  <testcase name="drawOnCoordinate()" classname="com.ll.level2.p87377.SolutionTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

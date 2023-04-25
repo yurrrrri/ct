@@ -2,8 +2,6 @@ package com.ll.level2.p87377;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Set;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class SolutionTest {
@@ -23,28 +21,28 @@ public class SolutionTest {
 
     @Test
     void getMinPoint() {
-        assertThat(new Solution().getMinPoint(Points.of(Point.of(1, -1), Point.of(-1, 1)))).isEqualTo(Point.of(-1, -1));
+        assertThat(Points.of(Point.of(1, -1), Point.of(-1, 1)).getMinPoint()).isEqualTo(Point.of(-1, -1));
     }
 
     @Test
     void getMaxPoint() {
-        assertThat(new Solution().getMaxPoint(Points.of(Point.of(4, -1), Point.of(-1, 6)))).isEqualTo(Point.of(4, 6));
+        assertThat(Points.of(Point.of(4, -1), Point.of(-1, 6)).getMaxPoint()).isEqualTo(Point.of(4, 6));
     }
 
     @Test
     void emptyMatrix() {
-        assertThat(new Solution().emptyMatrix(Points.of(Point.of(1, 1), Point.of(-1, 1))))
+        assertThat(Points.of(Point.of(1, 1), Point.of(-1, 1)).emptyMatrix())
                 .isEqualTo(new char[][]{{'.', '.', '.'}});
     }
 
     @Test
     void positivePoints() {
-        assertThat(new Solution().positivePoints(Points.of(Point.of(4, -7), Point.of(-1, 6)))).isEqualTo(Points.of(Point.of(5, 0), Point.of(0, 13)));
+        assertThat(Points.of(Point.of(4, -7), Point.of(-1, 6)).positivePoints()).isEqualTo(Points.of(Point.of(5, 0), Point.of(0, 13)));
     }
 
     @Test
     void transformToMatrix() {
-        assertThat(new Solution().transformToMatrix(Points.of(Point.of(1, 1), Point.of(-1, 1))))
+        assertThat(Points.of(Point.of(1, 1), Point.of(-1, 1)).toMatrix())
                 .isEqualTo(new char[][]{{'*', '.', '*'}});
     }
 

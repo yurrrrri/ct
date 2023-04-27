@@ -8,6 +8,6 @@ public class SolutionTest {
 
     @Test
     void t001() {
-        assertThat(new Solution().solution("hello", 3)).isEqualTo(	"hhheeellllllooo");
+        assertThat(new Solution().solution("hello", 3)).isEqualTo("hhheeellllllooo");
     }
 }

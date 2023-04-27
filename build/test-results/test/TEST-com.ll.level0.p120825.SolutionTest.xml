@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ll.level0.p120825.SolutionTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-04-26T05:29:57" hostname="DESKTOP-272TI8S" time="0.048">
-  <properties/>
-  <testcase name="t001()" classname="com.ll.level0.p120825.SolutionTest" time="0.048"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

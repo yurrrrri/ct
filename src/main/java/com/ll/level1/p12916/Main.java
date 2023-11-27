@@ -13,7 +13,6 @@ class Solution {
             else if (c == 'y' || c == 'Y') y++;
         }
 
-        if (p == 0 && y == 0) return true;
-        else return p == y ? true : false;
+        return p == y ? true : false;
     }
 }
